@@ -38,7 +38,7 @@ public class Hangman {
     }
 
     public boolean hasLost() {
-        return (guessed>numGuess && !hasWon());
+        return (guessed>=numGuess);
     }
 
     public void display() {
@@ -72,15 +72,19 @@ public class Hangman {
         if (!guess(c)) {
           System.out.println("Incorrect!");
         }
-        display();
       }
+      display();
       System.out.println();
     }
     if (hasWon()) {
-      System.out.println("You win!");
+      System.out.print("You win!");
     } else {
-      System.out.println("You lose!");
+      System.out.print("You lose! Answer was ");
+      for (char c: word){ System.out.print(c);}
     }
+    System.out.println();
+    System.out.println();
+    System.out.println();
     
   }
 
